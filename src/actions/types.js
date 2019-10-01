@@ -1,0 +1,3 @@
+export const FETCH_WEATHER = "FETCH_WEATHER";
+export const FETCH_USER_LOCATION = "FETCH_USER_LOCATION";
+export const IS_FETCHING = "IS_FETCHING";
