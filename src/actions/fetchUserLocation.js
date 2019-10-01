@@ -13,7 +13,7 @@ const fetchUserLocation = () => dispatch => {
         const API_KEY = 'fa8426178454105aa9e5a7f3ae72353a';
         const lat = `lat=${latitude}`;
         const lon = `lon=${longitude}`;
-        fetch(`http://api.openweathermap.org/data/2.5/weather?&${lat}&${lon}&APPID=${API_KEY}&units=imperial`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?&${lat}&${lon}&APPID=${API_KEY}&units=imperial`)
         .then(response => {
           // self.setState({ loading: false })
           return response.json()
