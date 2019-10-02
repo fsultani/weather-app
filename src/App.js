@@ -24,6 +24,8 @@ class App extends Component {
 
   render() {
     const { weatherInfo, userLocation, isLoading } = this.props;
+    const display = weatherInfo && weatherInfo.weatherInfoPayload.data
+    console.log("display\n", display);
     const currentDate = new Date()
     const currentDay = currentDate.getDay();
     const calendarDays = {
@@ -51,17 +53,17 @@ class App extends Component {
       11: "December",
     }
 
-    const zipCodeCityName = weatherInfo && weatherInfo.weatherInfoPayload &&
-      weatherInfo.weatherInfoPayload.name;
+    const zipCodeCityName = weatherInfo && weatherInfo.weatherInfoPayload.data &&
+      weatherInfo.weatherInfoPayload.data.name;
 
-    const zipCodeTemp = weatherInfo && weatherInfo.weatherInfoPayload &&
-      Math.round(weatherInfo.weatherInfoPayload.main.temp);
+    const zipCodeTemp = weatherInfo && weatherInfo.weatherInfoPayload.data &&
+      Math.round(weatherInfo.weatherInfoPayload.data.main.temp);
 
-    const zipCodeHumidity = weatherInfo && weatherInfo.weatherInfoPayload &&
-      weatherInfo.weatherInfoPayload.main.humidity;
+    const zipCodeHumidity = weatherInfo && weatherInfo.weatherInfoPayload.data &&
+      weatherInfo.weatherInfoPayload.data.main.humidity;
 
-    const zipCodeWindSpeed = weatherInfo && weatherInfo.weatherInfoPayload &&
-      weatherInfo.weatherInfoPayload.wind.speed;
+    const zipCodeWindSpeed = weatherInfo && weatherInfo.weatherInfoPayload.data &&
+      weatherInfo.weatherInfoPayload.data.wind.speed;
 
     const geoLocationCityName = userLocation && userLocation.geoCoordinates &&
       userLocation.geoCoordinates.name;
@@ -90,14 +92,6 @@ class App extends Component {
                 <h1 className="site-title">Weather Info</h1>
               </div>
             </a>
-            {weatherInfo && Object.keys(weatherInfo).map(el => (
-                <div>{el}</div>
-              ))
-            }
-            {weatherInfo && weatherInfo.weatherInfoPayload && Object.keys(weatherInfo.weatherInfoPayload).map(el => (
-                <div>{el}</div>
-              ))
-            }
           </div>
         </div>
         <div className="hero" data-bg-image="/images/banner.png">
