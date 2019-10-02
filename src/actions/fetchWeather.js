@@ -22,7 +22,8 @@ const fetchWeather = zip => dispatch => {
   .catch(error => {
     console.log("error\n", error);
     console.log("error.message\n", error.message);
-    alert("There was a catch error\n", error.message);
+    // alert("There was an error");
+    alert(error.message);
     window.location.reload();
   })
 }
