@@ -24,8 +24,6 @@ class App extends Component {
 
   render() {
     const { weatherInfo, userLocation, isLoading } = this.props;
-    const display = weatherInfo && weatherInfo.weatherInfoPayload.data
-    console.log("display\n", display);
     const currentDate = new Date()
     const currentDay = currentDate.getDay();
     const calendarDays = {
@@ -53,17 +51,17 @@ class App extends Component {
       11: "December",
     }
 
-    const zipCodeCityName = weatherInfo && weatherInfo.weatherInfoPayload.data &&
-      weatherInfo.weatherInfoPayload.data.name;
+    const zipCodeCityName = weatherInfo && weatherInfo.weatherInfoPayload &&
+      weatherInfo.weatherInfoPayload.name;
 
-    const zipCodeTemp = weatherInfo && weatherInfo.weatherInfoPayload.data &&
-      Math.round(weatherInfo.weatherInfoPayload.data.main.temp);
+    const zipCodeTemp = weatherInfo && weatherInfo.weatherInfoPayload &&
+      Math.round(weatherInfo.weatherInfoPayload.main.temp);
 
-    const zipCodeHumidity = weatherInfo && weatherInfo.weatherInfoPayload.data &&
-      weatherInfo.weatherInfoPayload.data.main.humidity;
+    const zipCodeHumidity = weatherInfo && weatherInfo.weatherInfoPayload &&
+      weatherInfo.weatherInfoPayload.main.humidity;
 
-    const zipCodeWindSpeed = weatherInfo && weatherInfo.weatherInfoPayload.data &&
-      weatherInfo.weatherInfoPayload.data.wind.speed;
+    const zipCodeWindSpeed = weatherInfo && weatherInfo.weatherInfoPayload &&
+      weatherInfo.weatherInfoPayload.wind.speed;
 
     const geoLocationCityName = userLocation && userLocation.geoCoordinates &&
       userLocation.geoCoordinates.name;
