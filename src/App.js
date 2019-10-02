@@ -88,6 +88,7 @@ class App extends Component {
               <img src="/images/logo.png" alt="" className="logo" />
               <div className="logo-type">
                 <h1 className="site-title">Weather Info</h1>
+                {console.log("weatherInfo\n", weatherInfo)}
               </div>
             </a>
           </div>

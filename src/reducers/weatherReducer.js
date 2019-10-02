@@ -8,6 +8,10 @@ const weatherReducer = (state = initialState, action) => {
       return {
         weatherInfoPayload: action.payload
       }
+    case "ERROR":
+      return {
+        weatherInfoPayload: action.payload
+      }
     default:
       return state;
   }
