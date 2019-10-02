@@ -15,7 +15,6 @@ const fetchUserLocation = () => dispatch => {
         const lon = `lon=${longitude}`;
         fetch(`https://api.openweathermap.org/data/2.5/weather?&${lat}&${lon}&APPID=${API_KEY}&units=imperial`)
         .then(response => {
-          // self.setState({ loading: false })
           return response.json()
         })
         .then(payload => dispatch({
@@ -28,7 +27,7 @@ const fetchUserLocation = () => dispatch => {
         })
      },
       function error(error_message) {
-        alert("There was an error");
+        alert(error_message.message);
         console.log("error_message\n", error_message);
       }
     )

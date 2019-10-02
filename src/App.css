@@ -2269,12 +2269,28 @@ form input[type="reset"] {
  * Footer Styles
  */
 
+.forecast-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .site-footer {
   width: 100%;
   background: #262936;
   padding: 50px 0;
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;*/
+  /*bottom: 0;*/
+}
+
+@media (max-width: 768px) {
+  .forecast-wrapper {
+    /*display: inline-block;*/
+    /*flex-direction: column;*/
+  }
+  .site-footer {
+    /*position: relative;*/
+    padding: 0;
+  }
 }
 
 .site-footer .subscribe-form {

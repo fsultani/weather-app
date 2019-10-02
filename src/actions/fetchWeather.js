@@ -5,6 +5,7 @@ const fetchWeather = zip => dispatch => {
   fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=${API_KEY}&units=imperial`)
   .then(res => res.json())
   .then(payload => {
+    console.log("payload\n", payload);
     if (payload.cod === 200) {
       return dispatch({
         type: FETCH_WEATHER,
@@ -19,9 +20,10 @@ const fetchWeather = zip => dispatch => {
     }
   })
   .catch(error => {
+    console.log("error\n", error);
+    console.log("error.message\n", error.message);
     alert("There was an error");
     window.location.reload();
-    console.log("error\n", error);
   })
 }
 

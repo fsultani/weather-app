@@ -85,14 +85,14 @@ class App extends Component {
         <div className="site-header">
           <div className="container">
             <a href="index.html" className="branding">
-              <img src="images/logo.png" alt="" className="logo" />
+              <img src="/images/logo.png" alt="" className="logo" />
               <div className="logo-type">
                 <h1 className="site-title">Weather Info</h1>
               </div>
             </a>
           </div>
         </div>
-        <div className="hero" data-bg-image="images/banner.png">
+        <div className="hero" data-bg-image="/images/banner.png">
           <div className="container">
             <form action="#" className="find-location">
               <input
@@ -110,67 +110,69 @@ class App extends Component {
             </form>
           </div>
         </div>
-        <div className="forecast-table">
-          <div className="container">
-            <div className="forecast-container">
-              <div className="today forecast">
-                <div className="forecast-header">
-                  <div className="day">{calendarDays[currentDay]}</div>
-                  <div className="date">{calendarMonths[currentDate.getMonth()]} {currentDate.getDate()}, {currentDate.getFullYear()}</div>
-                </div>
-                <div className="forecast-content">
-                  <div>
-                    <button
-                      className="getUserLocation"
-                      onClick={this.getUserLocation}
-                    >
-                      Use My Location
-                    </button>
+        <div className="forecast-wrapper">
+          <div className="forecast-table">
+            <div className="container">
+              <div className="forecast-container">
+                <div className="today forecast">
+                  <div className="forecast-header">
+                    <div className="day">{calendarDays[currentDay]}</div>
+                    <div className="date">{calendarMonths[currentDate.getMonth()]} {currentDate.getDate()}, {currentDate.getFullYear()}</div>
                   </div>
-                  <div className="weatherInfo">
-                    {cityName &&
-                      <div>
-                        <div className="location">
-                          {cityName}
-                        </div>
-                        <div className="degree">
-                          <div className="num">
-                            {temp}
-                          <sup>o</sup>F
-                          </div>
-                          <div className="forecast-icon">
-                            <img src="images/icons/icon-1.svg" alt="" width="90" />
-                          </div>
-                        </div>
+                  <div className="forecast-content">
+                    <div>
+                      <button
+                        className="getUserLocation"
+                        onClick={this.getUserLocation}
+                      >
+                        Use My Location
+                      </button>
+                    </div>
+                    <div className="weatherInfo">
+                      {cityName &&
                         <div>
-                          <div className="additional-info">
-                            <div>Humidity</div>
-                            <div>Wind</div>
+                          <div className="location">
+                            {cityName}
                           </div>
-                          <div className="additional-info">
-                            <div>{humidity}%</div>
-                            <div>{Math.round(wind*0.621371)} mph</div>
+                          <div className="degree">
+                            <div className="num">
+                              {temp}
+                            <sup>o</sup>F
+                            </div>
+                            <div className="forecast-icon">
+                              <img src="/images/icons/icon-1.svg" alt="" width="90" />
+                            </div>
+                          </div>
+                          <div>
+                            <div className="additional-info">
+                              <div>Humidity</div>
+                              <div>Wind</div>
+                            </div>
+                            <div className="additional-info">
+                              <div>{humidity}%</div>
+                              <div>{Math.round(wind*0.621371)} mph</div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    }
-                    {isLoading &&
-                      <div className="getUserLocation-loading">
-                        Looking you up...&nbsp;
-                        <span role="img" aria-label="Eyes looking">&#128064;</span>
-                      </div>
-                    }
+                      }
+                      {isLoading &&
+                        <div className="getUserLocation-loading">
+                          Looking you up...&nbsp;
+                          <span role="img" aria-label="Eyes looking">&#128064;</span>
+                        </div>
+                      }
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <footer className="site-footer">
+            <div className="container">
+              <p className="colophon">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+            </div>
+          </footer>
         </div>
-        <footer className="site-footer">
-          <div className="container">
-            <p className="colophon">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
-          </div>
-        </footer>
       </div>
     )
   }
