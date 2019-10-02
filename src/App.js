@@ -90,6 +90,13 @@ class App extends Component {
                 <h1 className="site-title">Weather Info</h1>
               </div>
             </a>
+            <div class="main-navigation">
+              <ul class="menu">
+                <li>
+                  <a href="https://github.com/fsultani/weather-app" target="_BLANK"><img src="/GitHub-Mark-Light-32px.png" /></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="hero" data-bg-image="/images/banner.png">
@@ -97,7 +104,7 @@ class App extends Component {
             <form action="#" className="find-location">
               <input
                 type="text"
-                placeholder="Find your location..."
+                placeholder="Enter zip code"
                 onChange={this.handleOnChange}
                 value={this.state.queriedLocation}
               />

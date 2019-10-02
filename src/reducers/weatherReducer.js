@@ -1,12 +1,19 @@
-import { FETCH_WEATHER } from '../actions/types';
+import { FETCH_WEATHER, IS_FETCHING } from '../actions/types';
 
-const initialState = null;
+const initialState = {
+  isLoading: false
+};
 
 const weatherReducer = (state = initialState, action) => {
   switch(action.type) {
+    case IS_FETCHING:
+      return {
+        isLoading: true
+      }
     case FETCH_WEATHER:
       return {
-        weatherInfoPayload: action.payload
+        weatherInfoPayload: action.payload,
+        isLoading: false
       }
     default:
       return state;
