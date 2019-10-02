@@ -88,9 +88,16 @@ class App extends Component {
               <img src="/images/logo.png" alt="" className="logo" />
               <div className="logo-type">
                 <h1 className="site-title">Weather Info</h1>
-                {console.log("weatherInfo\n", weatherInfo)}
               </div>
             </a>
+            {weatherInfo && Object.keys(weatherInfo).map(el => (
+                <div>{el}</div>
+              ))
+            }
+            {weatherInfo && weatherInfo.weatherInfoPayload && Object.keys(weatherInfo.weatherInfoPayload).map(el => (
+                <div>{el}</div>
+              ))
+            }
           </div>
         </div>
         <div className="hero" data-bg-image="/images/banner.png">
