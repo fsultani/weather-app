@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a simple weather app that allows you to enter a zip code, and retrieve the weather for that location.  You may also detect your current location using the "Use My Location" button.
+
+The API used for the weather data is from [OpenWeather](https://openweathermap.org).  This project was built with React and [Redux](https://redux.js.org).
+
 ## Available Scripts
 
 In the project directory, you can run:
