@@ -93,7 +93,9 @@ class App extends Component {
             <div class="main-navigation">
               <ul class="menu">
                 <li>
-                  <a href="https://github.com/fsultani/weather-app" target="_BLANK"><img src="/GitHub-Mark-Light-32px.png" /></a>
+                  <a href="https://github.com/fsultani/weather-app" target="_BLANK" rel="noopener noreferrer">
+                    <img src="/GitHub-Mark-Light-32px.png" alt="GitHub" />
+                  </a>
                 </li>
               </ul>
             </div>
